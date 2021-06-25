@@ -35,10 +35,11 @@ namespace Aula14
                         case "2":
                             Console.Clear();
                             // "Copiar" o cliente para fazer o fornecedor
-                            Fornecedor Fornecedor_ = new Fornecedor("João Dória", "45.696.940/0001-03");
+                            Fornecedor Fornecedor_ = new Fornecedor( "João Dória", "45.696.940/0001-03");
                             //Associar o fornecedor ao produto
-                            Produto ProdutoFisico = new ProdutoFisico("Mausi Michaelsóft", 89.90, 12.99, Fornecedor_);
-                            ProdutoFisico.Imprimir();                        
+                            Produto ProdutoFisico = new ProdutoFisico("Mausi Michaelsóft", 89.90, 12.99, Fornecedor_);                     
+                            ProdutoFisico.Imprimir();    
+
                             Console.WriteLine("==========================");
                             Console.WriteLine("Pressione qualtquer tecla para sair");
                             Console.ReadKey();
@@ -67,7 +68,8 @@ namespace Aula14
                         
                             // Estoque_.Limpar();
                             Estoque_.ImprimirEstoque();
-                             Console.WriteLine("==========================");
+                            
+                            Console.WriteLine("==========================");
                             Console.WriteLine("Pressione qualtquer tecla para sair");
                             Console.ReadKey();
                           
@@ -104,7 +106,9 @@ namespace Aula14
 
                                 Cliente Cliente_ = new Cliente(nome: "Ygor Canalli", cpf: "610.485.227-09");
                                 Compras Compras = new Compras( carrinho_ : Carrinho, estoque_: Estoque_3, cliente_ : Cliente_);
+                             
                                 Compras.Comprar_Produtos();
+                                
                                 Compras.ImprimirRecibo();
                                 Console.WriteLine("==========================");
                                 Console.WriteLine("Pressione qualtquer tecla para sair");
