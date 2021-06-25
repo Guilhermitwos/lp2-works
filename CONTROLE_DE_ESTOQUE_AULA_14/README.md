@@ -1,4 +1,4 @@
-# 🛍️ REPOSITÓRIO DE ATIVIDADES - BANCO DE DADOS 
+# 🛍️ REPOSITÓRIO DE ATIVIDADES - LINGUAGEM DE PROGRAMAÇÃO 2
 
 Neste repositório haverão as duas últimas ativades pontuadas de LP2.
 
