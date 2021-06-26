@@ -1,4 +1,4 @@
-# 🛍️ REPOSITÓRIO DE ATIVIDADES - LINGUAGEM DE PROGRAMAÇÃO 2
+# 🛍️ REPOSITÓRIO DE ATIVIDADES - LINGUAGEM DE PROGRAMAÇÃO 
 
 Neste repositório haverão as duas últimas ativades pontuadas de LP2.
 

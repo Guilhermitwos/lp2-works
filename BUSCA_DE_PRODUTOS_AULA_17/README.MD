@@ -1,4 +1,4 @@
-# 🛍️ REPOSITÓRIO DE ATIVIDADES - LINGUAGEM DE PROGRAMAÇÃO 2
+# 🛍️ REPOSITÓRIO DE ATIVIDADES - LINGUAGEM DE PROGRAMAÇÃO 
 
 Nesta pasta haverá a última ativade pontuada de LP2.
 
