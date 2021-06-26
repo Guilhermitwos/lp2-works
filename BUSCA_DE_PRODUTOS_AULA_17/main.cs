@@ -1,9 +1,13 @@
 using System;
 using System.Collections.Generic;
+using Mono.Data.Sqlite;
+
 
 class MainClass {
 
+   
   public static void Cadastrar(){
+ 
     Console.WriteLine("\n\nCadastro de Produto");
     Console.Write("Nome: ");
     string nome = Console.ReadLine();
@@ -11,6 +15,7 @@ class MainClass {
     double preco = Convert.ToDouble(Console.ReadLine());
     Produto p = new Produto(nome, preco);
     p.Persistir();
+
   }
 
   public static void Listar()
@@ -21,35 +26,108 @@ class MainClass {
     {
       produto.Imprimir();
     }
+    Console.WriteLine("======================");
+    Console.WriteLine("PRESSIONE QUALQUER TECLA PARA VOLTAR");
+    Console.WriteLine("======================");
   }
 
-  public static void Menu(){
-    char opcao;
-    do {
-      Console.WriteLine("\nOpções: [C]adastrar [L]istar [S]air");
-      opcao = Char.ToLower(Console.ReadKey().KeyChar);
-      switch (opcao)
-      {
-        case 'c':
-          Cadastrar();
-          break;
 
-        case 'l':
-          Listar();
-          break;
+  public static void Procurar()
+  {  
+    Console.Clear();
+    Console.WriteLine("======================");
+    Console.WriteLine("Escreva o nome do produto de que deseja procurar");
+    Console.WriteLine("======================");
 
-        case 's':
-          break;
-
-        default:
-          Console.WriteLine("Opção Inválida!");
-          break;
-      } 
-    } while (opcao != 's');
+    string procurar_ = Console.ReadLine();
+ 
+    Console.Clear();
+    Console.WriteLine("======================");
+    Console.WriteLine("Mostrando todos os registros de: {0}", procurar_);
+    Console.WriteLine("======================");
+  
+    List<Produto> produtos = Produto.ProcurarProdutos(procurar_);
+    foreach(var produto in produtos)
+    {
+      produto.Imprimir();
+    }
+  
+    Console.WriteLine("======================");
+    Console.WriteLine("PRESSIONE QUALQUER TECLA PARA VOLTAR");
+    Console.WriteLine("======================");
   }
-  public static void Main (string[] args) {
-    Console.WriteLine("Seja bem vindo ao cadastro de produtos!\n");
-    Menu();
-    Console.WriteLine("\nAté breve!");
-  }
+ 
+
+ 
+    public static void Main(string[] args)
+          {                 
+                bool MostrarMenu = true;
+                while (MostrarMenu)
+                {
+                    MostrarMenu = MenuPrincipal();
+                }
+          }
+
+
+
+
+          private static bool MenuPrincipal()
+            {
+
+                Console.Clear();
+                Console.WriteLine("==================================================================");
+                Console.WriteLine("Entre com '1' para Listar os produtos");
+                Console.WriteLine("Entre com '2' para Cadastrar um produto");
+                Console.WriteLine("Entre com '3' para Deletar todos os produtos");
+                Console.WriteLine("Entre com '4' para Pesquisar um produto");
+                Console.WriteLine("Entre com '5' para Fechar a aplicação");
+                Console.WriteLine("==================================================================");
+                switch (Console.ReadLine())
+                {
+                        
+                        case "1":
+                            Listar();
+                            Console.Read();    
+                         return true;
+
+                        case "2":
+                            Cadastrar();
+                            Console.Read();                          
+                        return true;
+
+                        case "3":
+                            Produto.Deletar();
+                            Console.Read();                          
+                        return true;
+
+                        case "4":                       
+                            Procurar();
+                            Console.Read();   
+                        return true;
+
+
+                        //Close Program
+                        case "5":
+                           Console.Clear();
+                           Console.WriteLine("======================");
+                           Console.WriteLine("Finalizado com sucesso!");
+                           Console.WriteLine("Obrigado por utilizar o sistema!");
+                           Console.WriteLine("======================");
+                           return false;
+                           
+
+                        //DEFAULT ROUTE (BACK TO MENU)
+                        default:
+                            return true;
+
+
+
+                }//END SWITCH
+
+
+
+
+            }//END METHOD
+
+
 }
