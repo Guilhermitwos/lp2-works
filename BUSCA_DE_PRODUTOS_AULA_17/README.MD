@@ -1,7 +1,8 @@
 # 🛍️ REPOSITÓRIO DE ATIVIDADES - LINGUAGEM DE PROGRAMAÇÃO 
 
-Nesta pasta haverá a última ativade pontuada de LP2.
+Nesta pasta haverá a última ativade pontuada de LP2. -
 
+ # 📌 ***AVISO, RODAR CÓDIGO NO REPLIT, OU IMPORTAR A BIBLIOTECA DO SQLLITE NA SUA IDE***
 
 ## ⌚ ATIVIDADE DESENVOLVIDA EM 25 MINUTOS 
 - Para medir, foi utilizado o cronômetro online do site -> [Relógio Online](https://relogioonline.com.br/cronometro)
